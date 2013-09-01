@@ -4,7 +4,7 @@
   <title>Vitorious Homework Sorter</title>
   <style>
   body, input, select {font-family:Arial,Helvetica,sans-serif;
-        font-size: 11px;}
+                      font-size: 11px;}
   </style>
 </head>  
 
@@ -15,6 +15,7 @@
     <option value="">&raquo; Select sort</option>
     <option value="quickSort"  <?php if (isset($_REQUEST['sort']) && $_REQUEST['sort'] == "quickSort"){echo 'selected';} ?>>Quicksort  </option>
     <option value="shellSort"  <?php if (isset($_REQUEST['sort']) && $_REQUEST['sort'] == "shellSort"){echo 'selected';} ?>>Shell sort </option>
+    <option value="phpSort"    <?php if (isset($_REQUEST['sort']) && $_REQUEST['sort'] == "phpSprt")  {echo 'selected';} ?>>PHP's sort method </option>
   </select>
 </form>  
 
@@ -24,7 +25,7 @@ require_once 'src/Sorter.php';
 
 $sortHandler = new FileHandler;
 $sorter = new Sorter;
-$sort_list = array("quickSort", "shellSort");
+$sort_list = array("quickSort", "shellSort", "phpSort");
 
 if (isset($_REQUEST['sort']) && in_array($_REQUEST['sort'], $sort_list)) {  
   // read input file into array
@@ -46,7 +47,7 @@ if (isset($_REQUEST['sort']) && in_array($_REQUEST['sort'], $sort_list)) {
 echo '</div>';
 }
 else {
-  echo '<div>Please select sort.</div>';
+  echo '<div>Please select sort implementation.</div>';
 }
 
 ?>

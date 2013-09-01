@@ -10,6 +10,15 @@ class Sorter {
   }
 
   /**
+  * Wraps PHP's sort method
+  * @param Array $array
+  */
+  public function phpSort($array) {
+  	sort($array);
+  	return $array;
+  }
+
+  /**
   * Quicksort implementation.
   * @param Array $array
   */
@@ -79,6 +88,7 @@ class Sorter {
    			}
   		}
  		}
+ 		return $array;
 	}
  
 }  
